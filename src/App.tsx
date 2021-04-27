@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { AppBar, Tab, Tabs } from "@material-ui/core";
+import { useState } from "react";
+import CounterTask from "./Components/CounterTask/CounterTask";
+import EmployeeTask from "./Components/EmployeesTask/EmployeeTask";
 
 function App() {
+
+  const [value, setValue] = useState(0);
+  let renderTask: JSX.Element = <CounterTask/>;
+
+  const handleChange = (event:React.ChangeEvent<{}>, newValue:number) => {
+    setValue(newValue);
+  };
+
+  if(value === 0)
+  {
+    renderTask = <CounterTask/>;
+  }
+  else if(value === 1)
+  {
+    renderTask = <EmployeeTask/>;
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AppBar position="static">
+        <Tabs value={value} onChange={handleChange}>
+          <Tab label="Counter Task" />
+          <Tab label="Employees Task" />
+        </Tabs>
+      </AppBar>
+      
+      {renderTask}
+    </>
   );
 }
 

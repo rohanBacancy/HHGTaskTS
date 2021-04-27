@@ -1,0 +1,17 @@
+.rootCounter {
+  display: grid;
+  place-items: center;
+  margin-top: 20vh;
+}
+
+.cardCustom {
+  display: flex;
+  padding: 50px;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10%;
+}
+
+.buttonContainer > button {
+  margin: 5px;
+}

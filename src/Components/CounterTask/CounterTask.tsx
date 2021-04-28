@@ -10,7 +10,7 @@ const CounterTask = () => {
         <div className={"rootCounter"}>
             <Card className={"cardCustom"}>
                 <Typography variant={"h5"}>Counter Value : {count}</Typography>
-                <div style={{marginTop:'15px'}}>
+                <div className={"mt15"}>
                     <Button
                         variant={"outlined"}
                         onClick={() => setCount(count+1)}

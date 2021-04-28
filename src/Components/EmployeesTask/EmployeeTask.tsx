@@ -7,9 +7,9 @@ import FormDialogue from './FormDialogue';
 
 const EmployeeTask = () => {
 
-    const [openForm,setOpenForm] = useState(false); //Form Popup open/close and API reCall Flag
+    const [openForm,setOpenForm] = useState(false);
     const notify: () => React.ReactText = () => toast.success("Employee Added Successfully");
-    const handleClose: () => void = () => setOpenForm(false); //Close PopUP Function
+    const handleClose: () => void = () => setOpenForm(false);
 
     return (
         <div className="empListDiv">

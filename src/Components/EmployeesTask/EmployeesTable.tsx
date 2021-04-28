@@ -81,7 +81,7 @@ const EmployeesTable = ({ openForm,setOpenForm }: EmployeesTableProps) => {
             <div className={"empListTitle"}><Typography variant={"h4"}>Employees List</Typography></div>
 
             { loading ? <LoadingSpinner/> : 
-            <TableContainer variant={"outlined"} component={Paper} style={{maxWidth:'60vw'}}>
+            <TableContainer variant={"outlined"} component={Paper} className={"mw60"}>
             <Table {...getTableProps()}>
                 <TableHead>
                     { headerGroups.map((headerGroup) => 
@@ -117,7 +117,7 @@ const EmployeesTable = ({ openForm,setOpenForm }: EmployeesTableProps) => {
                     <span>
                         <Button variant={"contained"} color={"primary"} onClick={() => setOpenForm(true)}>+ New</Button> {/* Open Popup Form Toggle */}
                         &nbsp;&nbsp;Results Per Page 
-                        <Button onClick={() => setPageSize(5)} color={"secondary"}>5</Button> |  {/* To set size of employee data per page */}
+                        <Button onClick={() => setPageSize(5)} color={"secondary"}>5</Button> | 
                         <Button onClick={() => setPageSize(15)} color={"secondary"}>15</Button> | 
                         <Button onClick={() => setPageSize(20)} color={'secondary'}>20</Button> 
                     </span>
